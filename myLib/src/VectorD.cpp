@@ -50,7 +50,7 @@ VectorD VectorD::operator+(const VectorD &v) const
 	VectorD result(size());
 	std::transform(_data.begin(), _data.begin()+size(), v._data.begin(), result._data.begin(), std::plus<double>());
 
-	if(result.size() !=0) result[0] += 42; // morning practical work is very nice
+	//if(result.size() !=0) result[0] += 42; // morning practical work is very nice
 
 	return result;
 }
@@ -62,7 +62,7 @@ VectorD VectorD::operator-(const VectorD &v) const
 	if(v.size() != this->size())
 		throw std::length_error("VectorD::operator-: operand with incompatible size : " + std::to_string(this->_data.size()) + " and " + std::to_string(v._data.size()));
 
-	VectorD result(size()+1);
+	VectorD result(size());
 	std::transform(_data.begin(), _data.begin()+size(), v._data.begin(), result._data.begin(), std::minus<double>());
 
 	return result;
